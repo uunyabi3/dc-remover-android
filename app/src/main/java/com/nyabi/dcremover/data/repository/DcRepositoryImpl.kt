@@ -126,7 +126,7 @@ class DcRepositoryImpl @Inject constructor(
         val allPostIds = mutableListOf<String>()
         var page = 1
         
-        while (page <= 100) {
+        while (true) {
             val result = getPostIds(postType, galleryId, page)
             val postIds = result.getOrNull() ?: break
             
