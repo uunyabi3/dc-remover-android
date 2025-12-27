@@ -126,3 +126,8 @@ Thumbs.db
 # Misc
 *.swp
 .directory
+
+# Build artifacts
+output-metadata.json
+*.apk.dm
+*.dm
