@@ -175,7 +175,7 @@ class DcRepositoryImpl @Inject constructor(
                 message = "삭제 중... (${index + 1}/$total)"
             ))
             
-            delay(500)
+            delay(1000)
         }
         
         emit(CleaningProgress(
