@@ -5,10 +5,21 @@ data class GalleryInfo(
     val name: String
 )
 
+enum class CaptchaState {
+    NONE,           // 캡챠 없음
+    REQUIRED,       // 캡챠 필요 (API 키 없음)
+    SOLVING,        // 캡챠 풀이 중
+    SOLVED,         // 캡챠 풀이 성공
+    FAILED          // 캡챠 풀이 실패
+}
+
 data class CleaningProgress(
     val current: Int,
     val total: Int,
-    val message: String
+    val message: String,
+    val captchaState: CaptchaState = CaptchaState.NONE,
+    val successCount: Int = 0,
+    val failCount: Int = 0
 )
 
 sealed class CleaningResult {
